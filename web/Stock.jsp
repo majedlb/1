@@ -1,4 +1,3 @@
-
 <%@page  import ="java.sql.*"%>
 <%!
     public static Connection connect() {
@@ -43,9 +42,9 @@
                 ResultSet rs = stmt.executeQuery("Select * from stock");
 
                %>
-                
+               <table border ="1"><tr><td>Stock id</td><td>Stock Name</td><td>Stock Phone</td><td>Branch ID</td></tr>         
                <% while (rs.next()) {%>
-        <table border="1"style="width:100%"> <col width="100"> <col width="100"><col width="100"><col width="100">
+       
 
            
             
@@ -56,8 +55,8 @@
                     <td><%out.println(rs.getString(4));%></td> </tr>
 
           
-        </table>  
-        <%  }
+        
+        <%  }%></table><%
 
                 c.close();
             } catch (Exception e) {

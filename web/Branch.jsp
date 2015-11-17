@@ -1,4 +1,3 @@
-
 <%@page  import ="java.sql.*"%>
 <%!
     public static Connection connect() {
@@ -43,10 +42,25 @@
                 ResultSet rs = stmt.executeQuery("Select * from branch");
 
                %>
-                
+                 <table border="1">
+                 
+                         <tr>
+                             <th>Branch id</th>
+                             <th>Branch Name</th>   
+                             <th>Branch District</th>
+                             <th>Branch Village</th>
+                             <th>Branch Phone</th>
+                         </tr>
+                         
+                         
+                         
+                 
+                     
+               
+             
                <% while (rs.next()) {%>
-        <table border="1" style="width:100%"> <col width="100"> <col width="100"><col width="100"><col width="100"><col width="100">
-
+   
+                 
            
             
                 <tr>
@@ -56,9 +70,8 @@
                     <td><%out.println(rs.getString(4));%></td> 
                     <td><%out.println(rs.getString(5));%></td>             </tr>
 
-           
-        </table>  
-        <%  }
+                     
+                           <%  }%></table> <%
 
                 c.close();
             } catch (Exception e) {
@@ -124,13 +137,4 @@
          }catch (Exception e){out.print(e.getMessage());}
             }
 
-        %>        
-
-
-
-            
-            
-            
-        
-    </body>
-</html>
+        %>

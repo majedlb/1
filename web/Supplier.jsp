@@ -1,4 +1,3 @@
-
 <%@page  import ="java.sql.*"%>
 <%!
     public static Connection connect() {
@@ -42,25 +41,30 @@
                 ResultSet rs = stmt.executeQuery("Select * from supplier");
 
         %>
+ <table border="1">
+        <tr>
+            <td>Supplier id</td>
+             <td>Supplier Name</td>
+             <td>Supplier Email</td>
+             <td>Supplier Address</td>
+             <td>Supplier Phone</td>
+        </tr>
+    <% while (rs.next()) {%>
+   
 
-        <% while (rs.next()) {%>
-        <table border="1" style="width:100%"> <col width="100"> <col width="100"><col width="100"><col width="100"><col width="100">
+        <tr>
+            <td><%out.println(rs.getString(1));%></td> 
+            <td><%out.println(rs.getString(2));%></td> 
+            <td><%out.println(rs.getString(3));%></td> 
+            <td><%out.println(rs.getString(4));%></td> 
+            <td><%out.println(rs.getString(5));%></td> 
 
 
-            
-                <tr>
-                    <td><%out.println(rs.getString(1));%></td> 
-                    <td><%out.println(rs.getString(2));%></td> 
-                    <td><%out.println(rs.getString(3));%></td> 
-                    <td><%out.println(rs.getString(4));%></td> 
-                    <td><%out.println(rs.getString(5));%></td> 
+        </tr>
 
 
-                </tr>
-
-           
-        </table>  
-        <%  }
+    
+        <%  }%></table><%
 
                 c.close();
             } catch (Exception e) {

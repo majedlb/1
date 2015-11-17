@@ -55,14 +55,13 @@
 
         %>
 
-
+        <table><tr><td>Stock id</td><td>Stock name</td><td>Product ID</td><td>Product Name</td><td>Product Quantity</td><td>Product Model</td></tr>
 
         <% while (rs.next()) {%> 
 
 
-        <table border="1" style="width:100%"> <col width="100"> <col width="100"><col width="100"><col width="100"><col width="100"><col width="100">
-
-            <tbody>
+       
+           
                 <tr>
                     <td><%out.println(rs.getString(1));%></td> 
                     <td><%out.println(rs.getString(2));%></td> 
@@ -72,9 +71,9 @@
                     <td><%out.println(rs.getString(6));%></td> 
                 </tr>
 
-            </tbody>
-        </table>  
-        <%  }
+           
+      
+        <%  }%></table> <%
 
                 c.close();
             } catch (Exception e) {
@@ -174,9 +173,9 @@
                 
                 ResultSet rs = stmt.executeQuery("select * from transfer where destinationstock<>'" + request.getAttribute("stocname1").toString()+ "' and validatedestinationstock is not null");
         %>
+ <table border="1"> <tr><td>Transfer id</td><td>Source Stock</td><td>destination stock</td><td>source date</td><td>destination date</td><td>driver id</td><td>car number</td><td>validate destination stock</td><td>product id</td><td>product quantity</td><td>product model</td><tr>
 
         <% while (rs.next()) {%>
-        <table border="1" style="width:100%"> <col width="100"> <col width="100"><col width="100"><col width="100"><col width="100"> <col width="100"> <col width="100"><col width="100"><col width="100"><col width="100">
             <tr>
                 <td><%out.println(rs.getString(1));%></td> 
                 <td><%out.println(rs.getString(2));%></td> 
@@ -189,8 +188,8 @@
                 <td><%out.println(rs.getString(9));%></td> 
                 <td><%out.println(rs.getString(10));%></td>  
             </tr>
-        </table>  
-        <%  }
+       
+        <%  } %></table> <% 
                 c.close();
             } catch (Exception e) {
 

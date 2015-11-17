@@ -1,4 +1,3 @@
-
 <%@page  import ="java.sql.*"%>
 <%!
     public static Connection connect() {
@@ -40,13 +39,22 @@
 
                 Connection c = connect();
                 Statement stmt = c.createStatement();
-                ResultSet rs = stmt.executeQuery("Select * from user");
+                ResultSet rs = stmt.executeQuery("SELECT userid,username,password,role,Name,phone,email,Stockid from user");
 
         %>
-
+<table border="1" > 
+    <tr>
+        <td>user id</td>
+        <td>username</td>
+        <td>password </td>
+        <td>role</td>
+        <td>Name</td>
+        <td>phone</td>
+        <td>Email</td>
+        <td>Stock id</td>
+    </tr>
         <% while (rs.next()) {%>
-        <table border="1" style="width:100%"> <col width="100"> <col width="100"><col width="100"><col width="100"><col width="100"><col width="100"><col width="100">
-
+        
 
 
             <tr>
@@ -54,11 +62,14 @@
                 <td><%out.println(rs.getString(2));%></td> 
                 <td><%out.println(rs.getString(3));%></td> 
                 <td><%out.println(rs.getString(4));%></td> 
-                <td><%out.println(rs.getString(5));%></td>  <td><%out.println(rs.getString(6));%></td>  <td><%out.println(rs.getString(7));%></td>             </tr>
+                <td><%out.println(rs.getString(5));%></td>
+                <td><%out.println(rs.getString(6));%></td> 
+                <td><%out.println(rs.getString(7));%></td>
+                <td><%out.println(rs.getString(8));%></td>             </tr>
 
 
-        </table>  
-        <%  }
+       
+            <%  }  %></table> <%
 
                 c.close();
             } catch (Exception e) {

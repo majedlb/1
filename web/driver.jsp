@@ -1,4 +1,3 @@
-
 <%@page  import ="java.sql.*"%>
 <%!
     public static Connection connect() {
@@ -42,8 +41,15 @@
 
         %>
 
+        <table>
+            <tr><td>Driver id</td><td>driver Name </td><td>driver Phone</td><td>driver License</td></tr>
+            
+            
+            
+            
+            
         <% while (rs.next()) {%>
-        <table border="1" style="width:100%"><col width="100"><col width="100"><col width="100"><col width="100">
+        
 
 
 
@@ -55,8 +61,8 @@
                      </tr>
 
 
-        </table>  
-        <%  }
+        
+        <%  }%></table> <%
 
                 c.close();
             } catch (Exception e) {

@@ -1,4 +1,3 @@
-
 <%@page  import ="java.sql.*"%>
 <%!
     public static Connection connect() {
@@ -46,24 +45,25 @@
 
 
             
+        <table><tr><td>Stock id</td><td>Stock name</td><td>Product ID</td><td>Product Name</td><td>Product Quantity</td><td>Product Model</td></tr>
+
         <% while (rs.next()) {%> 
-         
 
- <table border="1" style="width:100%"> <col width="100"> <col width="100"><col width="100"><col width="100"><col width="100"><col width="100">
 
-     <tbody>
-            <tr>
-                <td><%out.println(rs.getString(1));%></td> 
-                <td><%out.println(rs.getString(2));%></td> 
-                <td><%out.println(rs.getString(3));%></td> 
-                <td><%out.println(rs.getString(4));%></td> 
-                <td><%out.println(rs.getString(5));%></td>
-                <td><%out.println(rs.getString(6));%></td> 
-            </tr>
+       
+           
+                <tr>
+                    <td><%out.println(rs.getString(1));%></td> 
+                    <td><%out.println(rs.getString(2));%></td> 
+                    <td><%out.println(rs.getString(3));%></td> 
+                    <td><%out.println(rs.getString(4));%></td> 
+                    <td><%out.println(rs.getString(5));%></td>
+                    <td><%out.println(rs.getString(6));%></td> 
+                </tr>
 
-            </tbody>
-        </table>  
-        <%  }
+           
+      
+        <%  }%></table> <%
 
                 c.close();
             } catch (Exception e) {

@@ -1,5 +1,3 @@
-<%@taglib prefix="sql" uri="http://java.sun.com/jsp/jstl/sql"%>
- 
 <%@page  import ="java.sql.*"%>
 <%!
     public static Connection connect() {
