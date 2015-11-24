@@ -6,7 +6,7 @@
 
             Class.forName("com.mysql.jdbc.Driver").newInstance();
 
-            return DriverManager.getConnection("jdbc:mysql://localhost/stocdatabase", "root", "123456");
+            return DriverManager.getConnection("jdbc:mysql://localhost/stocdatabase", "root", "root");
         } catch (Exception e) {
             return null;
         }
@@ -45,7 +45,7 @@
 
 
             
-         <table><tr><td>Stock id</td><td>Stock name</td><td>Product ID</td><td>Product Name</td><td>Product Quantity</td><td>Product Model</td></tr>
+         <table border =1><tr><td>Stock id</td><td>Stock name</td><td>Product ID</td><td>Product Name</td><td>Product Quantity</td><td>Product Model</td></tr>
 
         <% while (rs.next()) {%> 
 

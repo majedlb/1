@@ -1,3 +1,4 @@
+
 <%@page  import ="java.sql.*"%>
 <%!
     public static Connection connect() {
@@ -6,7 +7,7 @@
 
             Class.forName("com.mysql.jdbc.Driver").newInstance();
 
-            return DriverManager.getConnection("jdbc:mysql://localhost/stocdatabase", "root", "123456");
+            return DriverManager.getConnection("jdbc:mysql://localhost/stocdatabase", "root", "root");
         } catch (Exception e) {
             return null;
         }

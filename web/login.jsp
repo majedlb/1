@@ -1,3 +1,4 @@
+
 <%@page  import ="java.sql.*"%>
 <%!
     public static Connection connect() {
@@ -6,7 +7,7 @@
 
             Class.forName("com.mysql.jdbc.Driver").newInstance();
 
-            return DriverManager.getConnection("jdbc:mysql://localhost/stocdatabase", "root", "123456");
+            return DriverManager.getConnection("jdbc:mysql://localhost/stocdatabase", "root", "root");
         } catch (Exception e) {
             return null;
         }
@@ -39,7 +40,7 @@
             <%   try {
                     Connection c12 = connect();
                     Statement stmt12 = c12.createStatement();
-                    ResultSet rs12 = stmt12.executeQuery("select s.stockid,s.Stockname,p.idproduct,p.productname,p.productQuantity,p.productmodel from stocdatabase.stock s,stocdatabase.stocpro sp,stocdatabase.product p where s.Stockid=sp.stocid and p.idproduct=sp.prodid1");%>
+                    ResultSet rs12 = stmt12.executeQuery("select Distinct (s.stockid),s.Stockname from stocdatabase.stock s");%>
             <table border="1"> <col width="75"> <col width="100">
                 <tr><td>Stock id </td><td>Stock Name</td></tr></table>
                 <% while (rs12.next()) {%> 
@@ -81,7 +82,7 @@
                 </tr>
                 <tr>
                     <td>Employee Password</td>
-                    <td><input type="text" name="epass" value="" size="50" autocomplete="off"/></td>
+                    <td><input type="password" name="epass" value="" size="50" autocomplete="off"/></td>
                 </tr>
 
                 <tr>
@@ -141,14 +142,14 @@
                 eusername = request.getParameter("eusername");
                 epass = request.getParameter("epass");
                 Stock = ((String) request.getParameter("Events"));
-
+              
                 session.setAttribute("theName", Stock);
                 out.println(session.getAttribute("theName"));
                 try {
                     Connection c = connect();
                     Statement stmt = c.createStatement();
 
-                    ResultSet rs3 = stmt.executeQuery("Select username,password,role,Stockid from user where username='" + eusername + "' and password='" + epass + "'");
+                    ResultSet rs3 = stmt.executeQuery("Select username,password,role,Stockid from user where username='" + eusername + "' and password='" + epass + "' and Stockid="+Integer.parseInt(session.getAttribute("theName").toString())+"");
                     while (rs3.next()) {
                         role1 = rs3.getString(3);
                         request.setAttribute("ssss", role1);

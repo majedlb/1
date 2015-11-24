@@ -1,3 +1,5 @@
+
+
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -9,8 +11,9 @@
 
         <table border="0">
 
-            <tbody>
+            <tbody><H1>
                 <tr>
+                <tr>  <td><a href='transferlist.jsp'>Transfer Information</a></td></tr><tr><td></td></tr>
                 <tr>  <td><a href='stkadmin.jsp'>Stock Information</a></td></tr><tr><td></td></tr>
                 <tr>  <td><a href='stkqdmin.jsp'>Limited Product</a></td></tr><tr><td></td></tr>
                 <tr>  <td><a href='Branch.jsp'>Branch</a></td></tr><tr><td></td></tr>
@@ -23,7 +26,7 @@
                 <tr> <td><a href="Depl.jsp">Department</a></td></tr><tr><td></td></tr>
                 <tr> <td><a href="Departement.jsp">Adding Specific Product to a Department</a></td></tr><tr><td></td></tr>
                 
-
+            </H1>
 
             </tbody>
         </table>

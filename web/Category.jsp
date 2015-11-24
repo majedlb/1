@@ -7,7 +7,7 @@
             
             Class.forName("com.mysql.jdbc.Driver").newInstance();
 
-            return DriverManager.getConnection("jdbc:mysql://localhost/stocdatabase", "root", "123456");
+            return DriverManager.getConnection("jdbc:mysql://localhost/stocdatabase", "root", "root");
         } catch (Exception e) {
             return null;
         }
@@ -41,9 +41,11 @@
         ResultSet rs1 = stmt1.executeQuery("Select * from category");
 
 
-    %><thead>Category List</thead>
+    %>
+    
+    <table border="1"><tr><td>Category ID</td><td>Category Description</td><td>Category Name</td></tr>
     <%   while (rs1.next()) {%>
-    <table border="1" style="width:100%"> <col width="100"> <col width="100"><col width="100">
+  
 
 
         <tbody><tr>
@@ -53,8 +55,8 @@
 
             </tr>
         </tbody>
-    </table>  
-    <%  }
+  
+    <%  }  %></table> <% 
 
             c.close();
         } catch (Exception e) {

@@ -6,7 +6,7 @@
 
             Class.forName("com.mysql.jdbc.Driver").newInstance();
 
-            return DriverManager.getConnection("jdbc:mysql://localhost/stocdatabase", "root", "123456");
+            return DriverManager.getConnection("jdbc:mysql://localhost/stocdatabase", "root", "root");
         } catch (Exception e) {
             return null;
         }
@@ -41,7 +41,7 @@
 
         %>
 
-        <table>
+        <table border =1>
             <tr><td>Driver id</td><td>driver Name </td><td>driver Phone</td><td>driver License</td></tr>
             
             
@@ -108,7 +108,7 @@
                 try {
                     Connection c = connect();
 
-                    String sql = "insert into stocdatabase.driver(drivername,driverphone,driverlicense)  values ('" + dname + "','" + dphone + "','" + lnumber + "')";
+                    String sql = "insert into stocdatabase.driver(drivername,driverphone,driverlecense)  values ('" + dname + "','" + dphone + "','" + lnumber + "')";
 
                     Statement stmt1 = c.createStatement();
                     stmt1.executeUpdate(sql);
